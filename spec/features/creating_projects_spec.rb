@@ -25,7 +25,6 @@ RSpec.feature "Creating new projects" do
     click_button "Create Project"
 
     expect(page).to have_content("Project has not been created.")
-    expect(page).to have_content("1 error prohibited this project from being saved:")
     expect(page).to have_content('Name can\'t be blank')
   end
 end

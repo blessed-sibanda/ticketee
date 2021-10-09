@@ -1,7 +1,19 @@
-<div class="ticket">
+<header class="ticket">
   <h2><%= @ticket.name %></h2>
-  <%= @ticket.description %>
-</div>
-<%= link_to 'Edit Ticket', edit_project_ticket_path(@ticket.project, @ticket) %>
-<%= link_to 'Delete Ticket', [@ticket.project, @ticket], 
-  method: :delete, data: {confirm: 'Are you sure?'} %>
+  <ul class="actions">
+    <%= link_to 'Edit Ticket', edit_project_ticket_path(@ticket.project, @ticket), class: 'edit' %>
+    <%= link_to 'Delete Ticket', [@ticket.project, @ticket], 
+  method: :delete, data: {confirm: 'Are you sure?'}, class: 'delete' %>
+  </ul>
+</header>
+<table class="attributes">
+  <tr>
+    <th>Author:</th>
+    <td><%= @ticket.author.email %></td>
+  </tr>
+  <tr>
+    <th>Created:</th>
+    <td><%= time_ago_in_words(@ticket.created_at) %> ago</td>
+  </tr>
+</table>
+<%= @ticket.description %>
