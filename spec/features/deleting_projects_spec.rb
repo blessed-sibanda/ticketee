@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.feature "Users can edit existing projects" do
-  scenario "with valid attributes", js: true do
+RSpec.feature "Deleting projects" do
+  scenario "successfully", js: true do
     FactoryBot.create(:project, name: "Visual Studio Code")
 
     visit "/"

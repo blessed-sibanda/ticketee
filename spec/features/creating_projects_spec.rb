@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Users can create new projects" do
+RSpec.feature "Creating new projects" do
   scenario "with valid attributes" do
     visit "/"
 
@@ -19,7 +19,7 @@ RSpec.feature "Users can create new projects" do
     expect(page).to have_title(title)
   end
 
-  scenario "when providing invalid attributes" do
+  scenario "with invalid attributes" do
     visit "/"
     click_link "New Project"
     click_button "Create Project"
