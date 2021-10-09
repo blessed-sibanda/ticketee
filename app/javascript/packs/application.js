@@ -16,3 +16,8 @@ ActiveStorage.start();
 
 require('trix');
 require('@rails/actiontext');
+
+require('jquery');
+require('@popperjs/core');
+require('popper.js');
+require('bootstrap');
