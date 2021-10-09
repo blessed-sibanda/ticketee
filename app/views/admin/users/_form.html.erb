@@ -1,0 +1,6 @@
+<%= bootstrap_form_with(model: [:admin, user]) do |f| %>
+  <%= f.email_field :email, autofocus: true %>
+  <%= f.password_field :password %>
+  <%= f.check_box :admin, label: 'Is an admin?' %>
+  <%= f.primary  %>
+<% end %>

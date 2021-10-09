@@ -1,10 +1,31 @@
 class Admin::UsersController < Admin::ApplicationController
+  before_action :set_user, only: %i(show edit update)
+
   def index
     @users = User.order(:email)
   end
 
   def new
     @user = User.new
+  end
+
+  def show
+  end
+
+  def update
+    if params[:user][:password].blank?
+      params[:user].delete(:password)
+    end
+
+    if @user.update(user_params)
+      redirect_to admin_users_url, notice: "User has been updated."
+    else
+      flash.now[:alert] = "User has not been updated."
+      render :edit
+    end
+  end
+
+  def edit
   end
 
   def create
@@ -21,5 +42,9 @@ class Admin::UsersController < Admin::ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password, :admin)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
