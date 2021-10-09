@@ -1,7 +1,9 @@
 require "rails_helper"
 
 RSpec.feature "Editting existing projects" do
+  let(:user) { create :user, :admin }
   before do
+    login_as user
     FactoryBot.create(:project, name: "Visual Studio Code")
 
     visit "/"
