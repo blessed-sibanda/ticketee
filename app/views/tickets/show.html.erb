@@ -5,15 +5,15 @@
     <%= link_to 'Delete Ticket', [@ticket.project, @ticket], 
   method: :delete, data: {confirm: 'Are you sure?'}, class: 'delete' %>
   </ul>
+  <table class="attributes">
+    <tr>
+      <th>Author:</th>
+      <td><%= @ticket.author.email %></td>
+    </tr>
+    <tr>
+      <th>Created:</th>
+      <td><%= time_ago_in_words(@ticket.created_at) %> ago</td>
+    </tr>
+  </table>
 </header>
-<table class="table">
-  <tr>
-    <th>Author:</th>
-    <td><%= @ticket.author.email %></td>
-  </tr>
-  <tr>
-    <th>Created:</th>
-    <td><%= time_ago_in_words(@ticket.created_at) %> ago</td>
-  </tr>
-</table>
 <%= @ticket.description %>
