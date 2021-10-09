@@ -1,24 +1,15 @@
-# README
+# Ticketee
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A ticket tracking Ruby on Rails application
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Tracks tickets and groups them into projects
 
-* System dependencies
+- Provides a way to restrict users to certain projects
 
-* Configuration
+- Allows users to upload files to tickets
 
-* Database creation
+- Lets users tag tickets so they're easy to find
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Provides an API on which users can base development of their own applications
