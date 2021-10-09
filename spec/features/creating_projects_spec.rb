@@ -1,6 +1,10 @@
 require "rails_helper"
 
 RSpec.feature "Creating new projects" do
+  before do
+    login_as create(:user, :admin)
+  end
+
   scenario "with valid attributes" do
     visit "/"
 
