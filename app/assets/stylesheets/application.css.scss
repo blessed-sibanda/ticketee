@@ -66,3 +66,8 @@ a.delete {
 .alert-alert {
   @extend .alert-danger;
 }
+
+input[type='submit'],
+label {
+  @extend .mt-3;
+}
