@@ -1,8 +1,12 @@
 class TicketsController < ApplicationController
-  before_action :set_project, only: [:new, :create]
+  before_action :set_project, only: [:new, :create, :show]
 
   def new
     @ticket = @project.tickets.build
+  end
+
+  def show
+    @ticket = Ticket.find(params[:id])
   end
 
   def create
