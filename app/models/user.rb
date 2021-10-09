@@ -14,4 +14,12 @@ class User < ApplicationRecord
   end
 
   scope :active, -> { where(:archived_at => nil) }
+
+  def active_for_authentication?
+    super && archived_at.nil?
+  end
+
+  def inactive_message
+    archived_at.nil? ? super : :archived
+  end
 end
