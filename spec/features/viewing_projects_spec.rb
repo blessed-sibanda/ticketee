@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "Users can view projects" do
-  scenario "with valid attributes" do
+  scenario "with the project details" do
     project = FactoryBot.create(:project, name: "Visual Studio Code")
 
     visit "/"
