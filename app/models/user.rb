@@ -7,4 +7,11 @@ class User < ApplicationRecord
   def to_s
     admin ? "#{email} (Admin)" : email
   end
+
+  def archive!
+    self.archived_at = Time.now
+    self.save!
+  end
+
+  scope :active, -> { where(:archived_at => nil) }
 end
