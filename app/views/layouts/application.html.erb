@@ -22,6 +22,12 @@
               <%= link_to 'Home', root_path, 
                 class: "nav-link #{'active' if current_page?('/')}" %>
             </li>
+            <% admins_only do %>
+              <li class="nav-item">
+                <%= link_to 'Admin', admin_root_path, 
+                class: "nav-link #{'active' if current_page?('/admin')}" %>
+              </li>
+            <% end %>
             <% unless user_signed_in? %>
               <li class="nav-item">
                 <%= link_to 'Sign up', new_user_registration_path, 

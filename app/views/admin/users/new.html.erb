@@ -1,0 +1,8 @@
+<header>
+  <h1>New User</h1>
+</header>
+<%= bootstrap_form_with(model: [:admin, @user]) do |f| %>
+  <%= f.email_field :email, autofocus: true %>
+  <%= f.password_field :password %>
+  <%= f.primary  %>
+<% end %>
